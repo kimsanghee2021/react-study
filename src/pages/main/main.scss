@@ -1,0 +1,17 @@
+.main {
+  background: #ff6600;
+  color: #fff;
+  * {
+    color: #fff;
+  }
+  input[type='text'] {
+    background: #333;
+  }
+
+  .count {
+    margin-top: 20px;
+    button {
+      background: #333;
+    }
+  }
+}
