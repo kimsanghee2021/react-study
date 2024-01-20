@@ -45,7 +45,7 @@ return(
 			className={[styles.input, error1,txtNum].filter(x=>x).join(' ')}
 			onChange={e=>handleChange(e.target.value)}
 			onKeyDown={e => {
-				if(e.key === 'Eneter'){
+				if(e.key === 'Enter'){
 					onTypeEnter();
 					}
 				}

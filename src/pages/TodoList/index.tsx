@@ -10,7 +10,7 @@ const clone = (r:any) => JSON.parse(JSON.stringify(r));
 
 const Index = () =>{
 	//인풋박스에 들어가는 value
-			console.log('안녕하세요');
+
 	const [defaultValue, setDefaultValue] = useState<string>("");
 
 	//list
@@ -154,7 +154,7 @@ const Index = () =>{
 		<div>
 			{
 				values.length > 0 && values.map((el,idx)=>(
-					<div key={`todo${idx}`}>
+					<div key={`todo${idx}`} className={styles.dFlex}>
 						<label key={`label${idx}`}>
 							<>
 								<input id={`checkbox${idx}`} type="checkbox" checked={el.isActive} onChange={(e)=> checkHandled(e,idx)} />
@@ -163,7 +163,7 @@ const Index = () =>{
 						</label>
 						<button style={{marginLeft:10, color:'red'}} onClick={()=>removeItem(idx)}>삭제</button>
 						<button style={{marginLeft:10, color:'blue'}} onClick={()=>editItem(idx)}>수정</button>
-						<div>
+						<div className={styles.dFlex}>
 							<div>
 								<input type="radio" id={`ready${idx}`} name={`status${idx}`} value="ready" checked={el.status ==='ready'} onChange={(e)=> radioHandled(e, idx)} />
 								<label htmlFor={`ready${idx}`}>준비</label>
