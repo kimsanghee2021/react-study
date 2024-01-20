@@ -8,8 +8,9 @@ interface IValues{message:string, isActive:boolean, status:'ready'|'doing'|'done
 
 const clone = (r:any) => JSON.parse(JSON.stringify(r));
 
-const index = () =>{
+const Index = () =>{
 	//인풋박스에 들어가는 value
+			console.log('안녕하세요');
 	const [defaultValue, setDefaultValue] = useState<string>("");
 
 	//list
@@ -24,6 +25,7 @@ const index = () =>{
 	//enter 눌렀을 시 이벤트 발생 
 	const onSubmit =() => {
 		//양수 일 때 (데이터가 있고 유저가 그 데이터를 클릭 했을 때 해당 데이터의 인덱스 값)
+
 		if(itemIdx > -1){
 			const _values = clone(values);
 			_values[itemIdx].message = defaultValue; 
@@ -185,4 +187,4 @@ const index = () =>{
 	);
 };
 
-export default index;
+export default Index;
