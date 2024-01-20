@@ -25,7 +25,7 @@ const Index = () =>{
 	//enter 눌렀을 시 이벤트 발생 
 	const onSubmit =() => {
 		//양수 일 때 (데이터가 있고 유저가 그 데이터를 클릭 했을 때 해당 데이터의 인덱스 값)
-
+console.log(defaultValue)
 		if(itemIdx > -1){
 			const _values = clone(values);
 			_values[itemIdx].message = defaultValue; 
@@ -33,6 +33,7 @@ const Index = () =>{
 			setItemIdx(-1); //수정이 완료되었으면 itemIdx를 초기화한다.
 		} else{
 			//최초 아이템 등록 시 - 리스트 추가 시
+			
 			if(defaultValue){ //여기서 defaultValue값은 값이 있으니까 true로 노출된다.
 				setValues([...values,{
 						message : defaultValue,
