@@ -1,0 +1,29 @@
+#header{
+    min-height: 80px; background: rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0 30px;
+    color:#fff;
+    .gnbWrap{
+        display: flex;
+        align-items: center;
+        .gnb{
+            display: flex;
+            list-style: none;
+            gap:0 10px;
+        }
+    }
+    .myMenuWrap{
+        display: flex; 
+        align-items: center;
+        gap:0 10px;
+    }
+}
+.dFlexCenter{
+    display: flex; 
+    align-items: center;
+}
+.dFlex{
+        display: flex; 
+}
