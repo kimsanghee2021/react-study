@@ -1,29 +1,41 @@
-#header{
-    min-height: 80px; background: rgba(0,0,0,0.3);
+#header {
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+  color: #fff;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(30px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+  .gnbWrap {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding:0 30px;
-    color:#fff;
-    .gnbWrap{
-        display: flex;
-        align-items: center;
-        .gnb{
-            display: flex;
-            list-style: none;
-            gap:0 10px;
-        }
+    .logo {
+      margin-right: 30px;
+      font-size: 30px;
     }
-    .myMenuWrap{
-        display: flex; 
-        align-items: center;
-        gap:0 10px;
+    .gnb {
+      display: flex;
+      list-style: none;
+      gap: 0 15px;
+      font-size: 20px;
     }
-}
-.dFlexCenter{
-    display: flex; 
+  }
+  .myMenuWrap {
+    display: flex;
     align-items: center;
+    gap: 0 10px;
+  }
 }
-.dFlex{
-        display: flex; 
+.dFlexCenter {
+  display: flex;
+  align-items: center;
+}
+.dFlex {
+  display: flex;
 }

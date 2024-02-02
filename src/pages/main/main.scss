@@ -1,7 +1,81 @@
 #main {
-  .bannerWrap {
-    width: 100%;
-    height: 600px;
-    background: red;
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+}
+.bannerWrap {
+  width: 100%;
+  height: 600px;
+  background: red;
+  border-radius: var(--border-radius);
+  margin: 0 auto;
+}
+.listSlideWrap {
+  margin-top: 80px;
+  .listSlide {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    li {
+      width: 305px;
+      border-radius: var(--border-radius);
+      height: 105px;
+      text-align: center;
+      line-height: 105px;
+      font-size: 30px;
+      font-weight: 700;
+      background-color: #262626;
+      background-image: linear-gradient(180deg, rgba(38, 38, 38, 0), #191919);
+    }
+  }
+}
+
+.productListWrap {
+  margin-top: 80px;
+  overflow: hidden;
+
+  .contsTitle {
+    margin-bottom: 20px;
+  }
+  .posterWrap {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    overflow-x: auto;
+    padding-top: 20px;
+    li {
+      position: relative;
+      transition: transform 0.3s ease-in-out;
+      .posterImg {
+        text-align: center;
+        font-size: 16px;
+        width: 215px;
+        height: 300px;
+        border-radius: 4px;
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.5);
+      }
+      .hiddenTitle {
+        text-align: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      &:hover {
+        transform: translate(0, -15px);
+        cursor: pointer;
+      }
+    }
+    &.rankingList {
+      display: flex;
+      li {
+        display: flex;
+        align-items: flex-end;
+        .ranking {
+          margin-right: 5px;
+        }
+      }
+    }
   }
 }

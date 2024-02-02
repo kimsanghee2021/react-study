@@ -1,0 +1,19 @@
+//변수명 설정 후 적용 할 root 위치
+:root {
+  --border-radius: 4px;
+  --default-color: #fff;
+}
+.dFlexCenter {
+  display: flex;
+  align-items: center;
+}
+.dFlexBetween {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contsTitle {
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.43;
+}
