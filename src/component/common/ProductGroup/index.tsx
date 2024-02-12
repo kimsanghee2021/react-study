@@ -1,4 +1,5 @@
 import ProductItem from "~/component/common/ProductItem";
+import "./productGroup.scss";
 interface Props {
   title?: string;
   isRanking?: boolean;
