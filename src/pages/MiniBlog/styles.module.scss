@@ -1,0 +1,102 @@
+@use "~/assets/common/scss/reset.scss";
+
+.miniBlogWrap {
+  width: 100%;
+  position: relative;
+  .container {
+    width: 500px;
+    margin: 0 auto;
+    padding: 100px 0;
+    .title {
+      font-size: 36px;
+      text-align: center;
+    }
+    .postList {
+      li {
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 10px;
+        font-size: 18px;
+        & + li {
+          margin-top: 15px;
+        }
+      }
+    }
+    .postView {
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 10px;
+      .postViewTitle {
+        font-size: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .postViewDesc {
+        line-height: 1.5;
+      }
+    }
+    .commentTitle {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 15px;
+      margin-top: 50px;
+    }
+    .commentInputWrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+      input {
+        width: calc(100% - 70px);
+      }
+      .commentInputBtn {
+        width: 50px;
+        background: #ddd;
+        color: #000;
+        border: none;
+        height: 42px;
+        cursor: pointer;
+      }
+    }
+    .postWrite {
+      margin-top: 50px;
+
+      textarea {
+        border: 1px solid #ddd;
+        margin-top: 30px;
+        border-radius: 5px;
+        padding: 10px;
+        display: block;
+        min-height: 300px;
+        width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+      .btn {
+        margin-top: 30px;
+      }
+    }
+    .btn {
+      border-radius: 30px;
+      border: none;
+      background: #000;
+      color: #fff;
+      width: 120px;
+      padding: 10px 15px;
+      font-size: 16px;
+      margin-left: auto;
+      display: block;
+      cursor: pointer;
+    }
+  }
+}
+input {
+  border: 1px solid #ddd;
+  height: 40px;
+  border-radius: 5px;
+  padding-left: 10px;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}

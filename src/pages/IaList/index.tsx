@@ -34,7 +34,7 @@ const Index = () => {
         >
           react 작업리스트 입니다. 클릭시 각 페이지로 이동 합니다.
         </p>
-        <button onClick={() => navigate("./miniblog")} style={btn}>
+        <button onClick={() => navigate("./mainPage")} style={btn}>
           mini 블로그 보러가기
         </button>
         <button onClick={() => navigate("./todolist")} style={btn}>

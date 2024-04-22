@@ -5,7 +5,9 @@ import Main from "~/pages/main";
 import Ids from "~/pages/id";
 import ToDoList from "~/pages/TodoList";
 import IaList from "~/pages/IaList";
-import MiniBlog from "~/pages/MiniBlog";
+import MainPage from "~/pages/MiniBlog/MainPage";
+import PostView from "~/pages/MiniBlog/PostViewPage";
+import PostWrite from "~/pages/MiniBlog/PostWritePage";
 
 const routes = () => (
   <BrowserRouter>
@@ -13,7 +15,9 @@ const routes = () => (
       <Route path="/" element={<IaList />} />
       <Route path="/main" element={<Main />} />
       <Route path="/test" element={<Test />} />
-      <Route path="/miniblog" element={<MiniBlog />} />
+      <Route path="/mainPage" element={<MainPage />} />
+      <Route path="/postView" element={<PostView />} />
+      <Route path="/postWrite" element={<PostWrite />} />
       <Route path="/ids/:id" element={<Ids />} />
       <Route path="/todolist" element={<ToDoList />} />
     </Routes>
