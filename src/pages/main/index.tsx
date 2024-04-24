@@ -101,7 +101,7 @@ const Index = () => {
   };
 
   return (
-    <>
+    <div style={{ backgroundColor: "#000" }}>
       <Header />
       <div id="main">
         <div className="bannerWrap">베너 이미지 영역</div>
@@ -118,7 +118,7 @@ const Index = () => {
         <ProductGroup {...unscriptShow} />
       </div>
       <Footer />
-    </>
+    </div>
   );
 };
 export default Index;

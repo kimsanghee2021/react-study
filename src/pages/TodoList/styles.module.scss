@@ -1,9 +1,37 @@
 @charset 'utf-8';
-.content{width:1200px;}
-.title{
-    font-size:30px;
+.content {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
 }
-.dFlex{
-    display: flex;
-    align-items: center;
+.title {
+  font-size: 70px;
+  font-weight: 700;
+}
+.radioGroup {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+.dFlex {
+  display: flex;
+  align-items: center;
+}
+.w1200 {
+  width: 1200px;
+  margin: 0 auto;
+}
+.btn {
+  width: 120px;
+  border: none;
+  height: 42px;
+  background-color: #000;
+  margin-left: 20px;
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  display: block;
+  cursor: pointer;
 }
