@@ -1,36 +1,36 @@
 import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 import Btn from "~/component/Button";
-interface IVAlues {
+interface IValues {
   title: string;
   contents: string;
 }
 
 const PostWritepage = () => {
+  const navigate = useNavigate();
   //인풋박스에 들어가는 내용들
-  const [defaultVal, setDefaultVal] = useState<string>("");
+  const [defaultTit, setDefaultTit] = useState<string>("");
   const [defaultConts, setDefaultConts] = useState<string>("");
+
   //list
-  const [values, setValues] = useState<IVAlues[]>([]);
+  const [values, setValues] = useState<IValues[]>([]);
 
   //등록버튼 눌렀을 때 함수
   const onSubmit = () => {
-    if (defaultVal) {
-      setValues([
-        ...values,
-        {
-          title: defaultVal,
-          contents: defaultConts,
-        },
-      ]);
-    }
-
-    setDefaultConts("");
+    setValues([
+      ...values,
+      {
+        title: defaultTit,
+        contents: defaultConts,
+      },
+    ]);
+    navigate("/mainPage");
   };
-
   useEffect(() => {
     localStorage.setItem("values", JSON.stringify(values));
   }, [values]);
+
   return (
     <>
       <div className={styles.miniBlogWrap}>
@@ -40,8 +40,8 @@ const PostWritepage = () => {
             <p>title</p>
             <input
               type="text"
-              defaultValue={defaultVal}
-              onChange={(e) => console.log(setDefaultVal(e.target.value))}
+              defaultValue={defaultTit}
+              onChange={(e) => setDefaultTit(e.target.value)}
             />
             <textarea
               defaultValue={defaultConts}
