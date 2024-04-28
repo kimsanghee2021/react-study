@@ -25,7 +25,7 @@ const PostWritepage = () => {
         contents: defaultConts,
       },
     ]);
-    navigate("/mainPage");
+    //navigate("/mainPage");
   };
   useEffect(() => {
     localStorage.setItem("values", JSON.stringify(values));
