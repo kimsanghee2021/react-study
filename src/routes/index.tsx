@@ -17,7 +17,7 @@ const routes = () => (
       <Route path="/main" element={<Main />} />
       <Route path="/test" element={<Test />} />
       <Route path="/mainPage" element={<MainPage />} />
-      <Route path="/postView" element={<PostView />} />
+      <Route path="/postView/:id" element={<PostView />} />
       <Route path="/postWrite" element={<PostWrite />} />
       <Route path="/ids/:id" element={<Ids />} />
       <Route path="/todolist" element={<ToDoList />} />

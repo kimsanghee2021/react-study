@@ -3,33 +3,41 @@ import { useNavigate } from "react-router-dom";
 import styles from "./styles.module.scss";
 import Btn from "~/component/Button";
 interface IValues {
-  title: string;
-  contents: string;
+  title?: string;
+  content?: string;
 }
 
 const PostWritepage = () => {
   const navigate = useNavigate();
-  //인풋박스에 들어가는 내용들
-  const [defaultTit, setDefaultTit] = useState<string>("");
-  const [defaultConts, setDefaultConts] = useState<string>("");
 
-  //list
-  const [values, setValues] = useState<IValues[]>([]);
+  // 이 컴포넌트에서 초기화하고싶은 함수, IValues 배열을 반환, null일 수도 있음.
+  const init = (): IValues[] | null => {
+    // 로컬스토리지 데이터 불러오기 string이거나 null일 수 있음
+    const dataStr =
+      localStorage.getItem("postList") != null
+        ? localStorage.getItem("postList")
+        : null;
+    //  dataStr null여부에 따라 다른 값 반환.
+    if (dataStr) {
+      return JSON.parse(dataStr ? dataStr : "[]");
+    } else {
+      return null;
+    }
+  };
+  //list 포스트 배열을 초기화. null일 수 있음.
+  const [postList, setPostList] = useState<IValues[] | null>(() => init());
 
+  const [postObj, setPostObj] = useState<IValues>({
+    title: "",
+    content: "",
+  });
   //등록버튼 눌렀을 때 함수
   const onSubmit = () => {
-    setValues([
-      ...values,
-      {
-        title: defaultTit,
-        contents: defaultConts,
-      },
-    ]);
-    //navigate("/mainPage");
+    const data = [...(postList ?? []), postObj];
+    console.log(data);
+    localStorage.setItem("postList", JSON.stringify(data));
+    navigate("/mainPage");
   };
-  useEffect(() => {
-    localStorage.setItem("values", JSON.stringify(values));
-  }, [values]);
 
   return (
     <>
@@ -40,12 +48,16 @@ const PostWritepage = () => {
             <p>title</p>
             <input
               type="text"
-              defaultValue={defaultTit}
-              onChange={(e) => setDefaultTit(e.target.value)}
+              defaultValue={postObj.title}
+              onChange={(e) =>
+                setPostObj({ ...postObj, title: e.target.value })
+              }
             />
             <textarea
-              defaultValue={defaultConts}
-              onChange={(e) => setDefaultConts(e.target.value)}
+              defaultValue={postObj.content}
+              onChange={(e) =>
+                setPostObj({ ...postObj, content: e.target.value })
+              }
             ></textarea>
             <Btn text="등록" onClick={() => onSubmit()} />
           </div>
