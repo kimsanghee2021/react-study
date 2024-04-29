@@ -7,7 +7,6 @@ const MainPage = () => {
   const navigate = useNavigate();
 
   const [postList, setPostList] = useState<IValues[]>(() => init());
-  console.log();
   return (
     <>
       <div className={styles.miniBlogWrap}>
