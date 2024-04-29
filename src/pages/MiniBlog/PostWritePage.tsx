@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./styles.module.scss";
 import Btn from "~/component/Button";
 interface IValues {
@@ -31,6 +31,7 @@ const PostWritepage = () => {
     title: "",
     content: "",
   });
+
   //등록버튼 눌렀을 때 함수
   const onSubmit = () => {
     const data = [...(postList ?? []), postObj];

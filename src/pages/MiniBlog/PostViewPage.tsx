@@ -7,7 +7,6 @@ const PostViewPage = () => {
   const navigate = useNavigate();
   const { id } = useParams() as { id: string };
   const [postList, setPostList] = useState<IValues[]>(() => init());
-  console.log(id);
 
   return (
     <>
@@ -22,9 +21,21 @@ const PostViewPage = () => {
               {postList[Number(id)].content}
             </div>
           </div>
-          <button className={styles.btn} onClick={() => navigate("/mainPage")}>
-            목록보기
-          </button>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+            <button
+              className={styles.btn}
+              onClick={() => navigate(`/postWrite/${id}`)}
+            >
+              수정하기
+            </button>
+            <button
+              style={{ marginLeft: 0 }}
+              className={styles.btn}
+              onClick={() => navigate("/mainPage")}
+            >
+              목록보기
+            </button>
+          </div>
           <div>
             <p className={styles.commentTitle}>댓글(5개)</p>
             <div className={styles.commentInputWrap}>
